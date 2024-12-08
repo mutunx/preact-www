@@ -10,6 +10,7 @@ import Corner from './corner';
 import { useOverlayToggle } from '../../lib/toggle-overlay';
 import { useLocation } from 'preact-iso';
 import { useLanguage } from '../../lib/i18n';
+import { prefetchContent } from '../../lib/use-resource';
 
 const LINK_FLAIR = {
 	logo: InvertedLogo
@@ -37,33 +38,30 @@ export default function Header() {
 					<Search />
 					<div class={style.social}>
 						<ReleaseLink class={cx(style.socialItem, style.release)} />
-						<a
-							class={style.socialItem}
-							aria-label="Browse the code on GitHub"
+						<SocialIcon
+							label="Browse the code on GitHub"
 							href="https://github.com/preactjs/preact"
-						>
-							<svg aria-hidden viewBox="0 0 24 24">
-								<use href="/icons.svg#github" />
-							</svg>
-						</a>
-						<a
-							class={style.socialItem}
-							aria-label="Follow us on Twitter"
+							viewbox="0 0 24 24"
+							id="github"
+						/>
+						<SocialIcon
+							label="Follow us on Twitter"
 							href="https://twitter.com/preactjs"
-						>
-							<svg aria-hidden viewBox="0 0 34 27.646">
-								<use href="/icons.svg#twitter" />
-							</svg>
-						</a>
-						<a
-							class={style.socialItem}
-							aria-label="Chat with us on Slack"
+							viewbox="0 0 34 27.646"
+							id="twitter"
+						/>
+						<SocialIcon
+							label="Follow us on Bluesky"
+							href="https://bsky.app/profile/preactjs.com"
+							viewbox="0 0 568 501"
+							id="bluesky"
+						/>
+						<SocialIcon
+							label="Chat with us on Slack"
 							href="http://chat.preactjs.com/"
-						>
-							<svg aria-hidden viewBox="0 0 512 512">
-								<use href="/icons.svg#slack" />
-							</svg>
-						</a>
+							viewbox="0 0 512 512"
+							id="slack"
+						/>
 					</div>
 					<div class={style.translation}>
 						<NavMenu language />
@@ -75,6 +73,20 @@ export default function Header() {
 		</header>
 	);
 }
+
+const SocialIcon = ({ label, href, viewbox, id }) => (
+	<a
+		class={style.socialItem}
+		aria-label={label}
+		href={href}
+		target="_blank"
+		rel="noopener noreferrer"
+	>
+		<svg aria-hidden viewBox={viewbox}>
+			<use href={`/icons.svg#${id}`} />
+		</svg>
+	</a>
+);
 
 const HamburgerMenu = ({ open, ...props }) => (
 	<div class={style.hamburger} open={open} {...props}>
@@ -197,13 +209,21 @@ const NavLink = ({ to, isOpen, route, ...props }) => {
 		e.preventDefault();
 		location.route('/branding');
 	}
+
+	const href = to.href || to.path;
+	const prefetchHref = href == '/tutorial'
+		? '/tutorial/index'
+		: href == '/'
+			? '/index'
+			: href;
 	const homeProps = to.href == '/' || to.path == '/'
 		? { onContextMenu: BrandingRedirect, 'aria-label': 'Home' }
 		: {};
 
 	return (
 		<a
-			href={to.href || to.path}
+			href={href}
+			onMouseOver={() => prefetchContent(prefetchHref)}
 			{...props}
 			data-route={route}
 			{...homeProps}
