@@ -39,7 +39,7 @@ function Counter() {
 </section>
 
 <section class="home-section">
-  <img src="/home/metal.svg" alt="metal" loading="lazy" width="54" height="54">
+  <img src="/home/metal.svg" alt="metal" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Ближе к DOM</h3>
@@ -54,7 +54,7 @@ function Counter() {
 </section>
 
 <section class="home-section">
-  <img src="/home/size.svg" alt="size" loading="lazy" width="54" height="54">
+  <img src="/home/size.svg" alt="size" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Малый размер</h3>
@@ -69,7 +69,7 @@ function Counter() {
 </section>
 
 <section class="home-section">
-  <img src="/home/performance.svg" alt="performance" loading="lazy" width="54" height="54">
+  <img src="/home/performance.svg" alt="performance" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Большая производительность</h3>
@@ -83,7 +83,7 @@ function Counter() {
 </section>
 
 <section class="home-section">
-  <img src="/home/portable.svg" alt="portable" loading="lazy" width="54" height="54">
+  <img src="/home/portable.svg" alt="portable" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Портативная и встраиваемая</h3>
@@ -97,7 +97,7 @@ function Counter() {
 </section>
 
 <section class="home-section">
-  <img src="/home/productive.svg" alt="productive" loading="lazy" width="54" height="54">
+  <img src="/home/productive.svg" alt="productive" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Мгновенная продуктивность</h3>
@@ -112,7 +112,7 @@ function Counter() {
 </section>
 
 <section class="home-section">
-  <img src="/home/compatible.svg" alt="compatible" loading="lazy" width="54" height="54">
+  <img src="/home/compatible.svg" alt="compatible" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Совместимость с экосистемой</h3>
@@ -133,7 +133,7 @@ function Counter() {
 <section class="home-split">
     <div>
         <h3>Список дел</h3>
-        <pre><code class="lang-jsx">
+        <pre><code class="language-jsx">
 // --repl
 export default class TodoList extends Component {
     state = { todos: [], text: '' };
@@ -168,7 +168,7 @@ render(&lt;TodoList /&gt;, document.getElementById("app"));
     </div>
     <div>
         <h3>Пример выполнения</h3>
-        <pre repl="false"><code class="lang-jsx">
+        <pre repl="false"><code class="language-jsx">
 import TodoList from './todo-list';<br>
 render(&lt;TodoList /&gt;, document.body);
 </code></pre>
@@ -183,7 +183,7 @@ render(&lt;TodoList /&gt;, document.body);
 <section class="home-split">
     <div>
         <h3>Получение звёзд GitHub</h3>
-        <pre><code class="lang-jsx">
+        <pre><code class="language-jsx">
 // --repl
 export default class Stars extends Component {
     async componentDidMount() {
@@ -200,12 +200,12 @@ export default class Stars extends Component {
     }
 }
 // --repl-after
-render(&lt;Stars /&gt;, document.getElementById("app"));
+render(&lt;Stars repo="preactjs/preact" /&gt;, document.getElementById("app"));
         </code></pre>
     </div>
     <div>
         <h3>Пример выполнения</h3>
-        <pre repl="false"><code class="lang-jsx">
+        <pre repl="false"><code class="language-jsx">
 import Stars from './stars';<br>
 render(
     &lt;Stars repo="preactjs/preact" /&gt;,

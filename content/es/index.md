@@ -40,7 +40,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/metal.svg">
+  <img src="/home/metal.svg" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Más cerca del DOM</h3>
@@ -56,7 +56,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/size.svg">
+  <img src="/home/size.svg" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Tamaño reducido</h3>
@@ -72,7 +72,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/performance.svg">
+  <img src="/home/performance.svg" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Gran Rendimiento</h3>
@@ -87,7 +87,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/portable.svg">
+  <img src="/home/portable.svg" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Portable y embebible</h3>
@@ -102,7 +102,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/productive.svg">
+  <img src="/home/productive.svg" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Productividad instantánea</h3>
@@ -120,7 +120,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/compatible.svg">
+  <img src="/home/compatible.svg" loading="lazy" decoding="async" width="54" height="54">
 
   <div>
     <h3>Ecosistema compatible</h3>
@@ -144,7 +144,7 @@ function Counter() {
 <section class="home-split">
     <div>
         <h3>Componente de Todo List</h3>
-        <pre><code class="lang-jsx">
+        <pre><code class="language-jsx">
 // --repl
 export default class TodoList extends Component {
     state = { todos: [], text: '' };
@@ -179,7 +179,7 @@ render(&lt;TodoList /&gt;, document.getElementById("app"));
     </div>
     <div>
         <h3>Ejemplo corriendo</h3>
-        <pre repl="false"><code class="lang-jsx">
+        <pre repl="false"><code class="language-jsx">
 import TodoList from './todo-list';<br>
 render(&lt;TodoList /&gt;, document.body);
         </code></pre>
@@ -193,7 +193,7 @@ render(&lt;TodoList /&gt;, document.body);
 <section class="home-split">
     <div>
         <h3>Buscando las estrellas de Github</h3>
-        <pre><code class="lang-jsx">
+        <pre><code class="language-jsx">
 // --repl
 export default class Stars extends Component {
     async componentDidMount() {
@@ -210,12 +210,12 @@ export default class Stars extends Component {
     }
 }
 // --repl-after
-render(&lt;Stars /&gt;, document.getElementById("app"));
+render(&lt;Stars repo="preactjs/preact" /&gt;, document.getElementById("app"));
         </code></pre>
     </div>
     <div>
         <h3>Ejemplo corriendo</h3>
-        <pre repl="false"><code class="lang-jsx">
+        <pre repl="false"><code class="language-jsx">
 import Stars from './stars';<br>
 render(
     &lt;Stars repo="developit/preact" /&gt;,

@@ -40,7 +40,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/metal.svg">
+  <img src="/home/metal.svg" loading="lazy" decoding="async" width="54" height="54">
   <div>
     <h3>Mais próximo do DOM.</h3>
     <p>
@@ -54,7 +54,7 @@ function Counter() {
 </section>
 
 <section class="home-section">
-  <img src="/home/size.svg">
+  <img src="/home/size.svg" loading="lazy" decoding="async" width="54" height="54">
   <div>
     <h3>Leve e Pequeno</h3>
     <p>
@@ -69,7 +69,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/performance.svg">
+  <img src="/home/performance.svg" loading="lazy" decoding="async" width="54" height="54">
   <div>
     <h3>Alta Performance</h3>
     <p>
@@ -83,7 +83,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/portable.svg">
+  <img src="/home/portable.svg" loading="lazy" decoding="async" width="54" height="54">
   <div>
     <h3>Portável &amp; Embutível</h3>
     <p>
@@ -97,7 +97,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/productive.svg">
+  <img src="/home/productive.svg" loading="lazy" decoding="async" width="54" height="54">
   <div>
     <h3>Produtividade Instantânea</h3>
     <p>
@@ -112,7 +112,7 @@ function Counter() {
 
 
 <section class="home-section">
-  <img src="/home/compatible.svg">
+  <img src="/home/compatible.svg" loading="lazy" decoding="async" width="54" height="54">
   <div>
     <h3>Ecossistema compatível</h3>
     <p>
@@ -134,7 +134,7 @@ function Counter() {
 <section class="home-split">
     <div>
         <h3>Componente de <i>Todo List</i> </h3>
-        <pre><code class="lang-jsx">
+        <pre><code class="language-jsx">
 // --repl
 export default class TodoList extends Component {
     state = { todos: [], text: '' };
@@ -169,7 +169,7 @@ render(&lt;TodoList /&gt;, document.getElementById("app"));
     </div>
     <div>
         <h3>Exemplo em ação</h3>
-        <pre repl="false"><code class="lang-jsx">
+        <pre repl="false"><code class="language-jsx">
 import TodoList from './todo-list';<br>
 render(&lt;TodoList /&gt;, document.body);
         </code></pre>
@@ -183,7 +183,7 @@ render(&lt;TodoList /&gt;, document.body);
 <section class="home-split">
     <div>
         <h3>Buscar estrelas no Github</h3>
-        <pre><code class="lang-jsx">
+        <pre><code class="language-jsx">
 // --repl
 export default class Stars extends Component {
     async componentDidMount() {
@@ -200,12 +200,12 @@ export default class Stars extends Component {
     }
 }
 // --repl-after
-render(&lt;Stars /&gt;, document.getElementById("app"));
+render(&lt;Stars repo="preactjs/preact" /&gt;, document.getElementById("app"));
         </code></pre>
     </div>
     <div>
         <h3>Exemplo em ação</h3>
-        <pre repl="false"><code class="lang-jsx">
+        <pre repl="false"><code class="language-jsx">
 import Stars from './stars';<br>
 render(
     &lt;Stars repo="developit/preact" /&gt;,
