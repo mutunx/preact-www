@@ -211,6 +211,23 @@ class Expandable extends Component<ExpandableProps, ExpandableState> {
 
 Class components include children by default, typed as `ComponentChildren`.
 
+## Inheriting HTML properties
+
+When we write components like `<Input />` that wrap the HTML `<input>`, most of the time we'd want to inherit
+the props that can be used on the native HTML input element. To do this we can do the following:
+
+```tsx
+import { JSX } from 'preact';
+
+interface InputProperties extends JSX.InputHTMLAttributes<HTMLInputElement> {
+  mySpecialProp: any
+}
+
+const Input = (props: InputProperties) => <input {...props} />
+```
+
+Now when we use `Input` it will know about properties like `value`, ...
+
 ## Typing events
 
 Preact emits regular DOM events. As long as your TypeScript project includes the `dom` library (set it in `tsconfig.json`), you have access to all event types that are available in your current configuration.
@@ -277,7 +294,7 @@ This helps a lot if you want to make sure that the elements you `ref` to are inp
 
 ## Typing context
 
-`createContext` tries to infer as much as possible from the intial values you pass to:
+`createContext` tries to infer as much as possible from the initial values you pass to:
 
 ```tsx
 import { h, createContext } from "preact";
@@ -365,7 +382,7 @@ Most hooks don't need any special typing information, but can infer types from u
 
 ### useState, useEffect, useContext
 
-`useState`, `useEffect` and `useContext` all feature generic types so you don't need to annotate extra. Below is a minimal component that uses `useState`, with all types infered from the function signature's default values.
+`useState`, `useEffect` and `useContext` all feature generic types so you don't need to annotate extra. Below is a minimal component that uses `useState`, with all types inferred from the function signature's default values.
 
 ```tsx
 const Counter = ({ initial = 0 }) => {

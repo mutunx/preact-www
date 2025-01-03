@@ -1,4 +1,3 @@
-import CodeBlock from './code-block';
 import Jumbotron from './jumbotron';
 import GithubStars from './github-stars';
 import TodoList from './todo-list';
@@ -8,16 +7,17 @@ import BlogOverview from './blog-overview';
 import Sponsors from './sponsors';
 import WeAreUsing from './we-are-using';
 import Branding from './branding';
+import TabGroup from './tab-group';
 
 export default {
 	Toc,
 	BlogOverview,
-	CodeBlock,
 	Jumbotron,
 	GithubStars,
 	TodoList,
 	Sponsors,
 	Logo,
 	WeAreUsing,
-	Branding
+	Branding,
+	TabGroup
 };

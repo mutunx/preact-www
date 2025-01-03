@@ -25,16 +25,16 @@ Cela vous permet de continuer à écrire du code pour React/ReactDOM sans aucun 
 Le processus d'installation comprend deux étapes :
 Premièrement, vous devez installer preact et preact-compat (ce sont deux packages séparés) :
 
-```sh
+```bash
 npm i -S preact preact-compat
 ```
 
-Une fois ces dépendences installées, configurez votre système de build pour remplacer les imports de React afin qu'ils pointent vers Preact.
+Une fois ces dépendances installées, configurez votre système de build pour remplacer les imports de React afin qu'ils pointent vers Preact.
 
 
 ### Comment créer un alias preact-compat
 
-Maintenant que vous avez vos dépendences installées, vous allez devoir configurer votre système de build pour rediriger tous les imports/requires de `react` ou `react-dom` vers `preact-compat`.
+Maintenant que vous avez vos dépendances installées, vous allez devoir configurer votre système de build pour rediriger tous les imports/requires de `react` ou `react-dom` vers `preact-compat`.
 
 #### Aliasing avec Webpack
 
@@ -85,7 +85,7 @@ Cette approche est couverte dans la prochaine section.
 
 Pour des raison de rendu côté serveur, si vous n'utilisez pas un bundler comme webpack pour construire votre code côté serveur, vous pouvez utiliser le package [module-alias](https://www.npmjs.com/package/module-alias) pour remplacer react par preact.
 
-```sh
+```bash
 npm i -S module-alias
 ```
 
@@ -145,7 +145,7 @@ Généralement, le processus pour passer à Preact comporte quelques étapes :
 
 Cette étape est simple : vous allez devoir installer la bibliothèque avant de pouvoir l'utiliser !
 
-```sh
+```bash
 npm install --save preact  # ou : npm i -S preact
 ```
 
@@ -204,7 +204,7 @@ Alternativement, vous pouvez automatiquement convertir vos appels à `createClas
 
 Une autre différence qu'il convient de noter est que Preact ne support que les références fonctionnelles par défaut.
 Les références par chaîne de caractères sont dépréciées dans React et vont être supprimées sous peu, car elles introduisent trop de complexité pour peu de gains.
-Si vous voulez continuer d'utiliser les références par chaîne de caractère, [cette petite fonction linkedRef](https://gist.github.com/developit/63e7a81a507c368f7fc0898076f64d8d) vous offre une solution durable qui alimente `this.refs.$$` comme les références par chaine de caractères le faisaient. La simplicité de ce petit enrobage autour des références fonctionnelles aide aussi à illustrer pourquoi celles-ci sont maintenant le meilleur choix pour le futur.
+Si vous voulez continuer d'utiliser les références par chaîne de caractère, [cette petite fonction linkedRef](https://gist.github.com/developit/63e7a81a507c368f7fc0898076f64d8d) vous offre une solution durable qui alimente `this.refs.$$` comme les références par chaîne de caractères le faisaient. La simplicité de ce petit enrobage autour des références fonctionnelles aide aussi à illustrer pourquoi celles-ci sont maintenant le meilleur choix pour le futur.
 
 
 ### 4. Simplify Root Render
